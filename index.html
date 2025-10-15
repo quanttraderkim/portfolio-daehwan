@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>김대환 | 기획자 포트폴리오</title>
-    <meta name="description" content="AI 서비스의 성공적인 사업화 및 광고 프로덕트 최적화를 통해 비즈니스 성장을 주도하는 기획자 김대환의 포트폴리오">
-    <meta name="keywords" content="기획자, Product Manager, 김대환, SK텔레콤, AI 서비스, 광고 최적화">
+    <meta name="description" content="모바일 서비스의 사업 기획 전문가로서, AI 전화 서비스 '에이닷 전화'의 광고 사업화를 주도하여 지속 가능한 매출 성장 모델을 구축했습니다.">
+    <meta name="keywords" content="기획자, Product Manager, 사업 기획, 김대환, SK텔레콤, AI 서비스, 광고 최적화, 카카오뱅크">
     <meta name="author" content="김대환">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://daehwan-portfolio.netlify.app/">
+    <meta property="og:url" content="https://quanttraderkim.netlify.app/">
     <meta property="og:title" content="김대환 | 기획자 포트폴리오">
-    <meta property="og:description" content="AI 서비스의 성공적인 사업화 및 광고 프로덕트 최적화를 통해 비즈니스 성장을 주도하는 기획자">
+    <meta property="og:description" content="모바일 서비스의 사업 기획 전문가, 김대환의 포트폴리오입니다.">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://daehwan-portfolio.netlify.app/">
+    <meta property="twitter:url" content="https://quanttraderkim.netlify.app/">
     <meta property="twitter:title" content="김대환 | 기획자 포트폴리오">
-    <meta property="twitter:description" content="AI 서비스의 성공적인 사업화 및 광고 프로덕트 최적화를 통해 비즈니스 성장을 주도하는 기획자">
+    <meta property="twitter:description" content="모바일 서비스의 사업 기획 전문가, 김대환의 포트폴리오입니다.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
@@ -53,29 +53,17 @@
         .details-icon {
             transition: transform 0.3s ease;
         }
-        .fade-in {
-            animation: fadeIn 0.6s ease-in;
+        .details-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            padding-top: 0;
+            padding-bottom: 0;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .scroll-smooth {
-            scroll-behavior: smooth;
-        }
-        
-        /* 모바일 최적화 */
-        @media (max-width: 768px) {
-            .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
+        .details-container.open {
+            max-height: 2000px; /* 충분히 큰 값 */
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
         }
     </style>
 </head>
@@ -83,18 +71,16 @@
     <div class="container mx-auto max-w-4xl px-4 py-12 md:py-20">
 
         <!-- 헤더 섹션 -->
-        <header class="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 fade-in">
+        <header class="flex flex-col md:flex-row items-start md:items-center justify-between mb-12">
             <div>
                 <h1 class="text-4xl md:text-5xl font-bold text-white">김대환 (Daehwan Kim)</h1>
-                <h2 class="text-xl md:text-2xl font-medium highlight mt-2">기획자 (Product Manager)</h2>
+                 <p class="text-lg text-gray-300 mt-4">
+                    <a href="tel:010-4124-3136" class="hover:text-white">010-4124-3136</a> | 
+                    <a href="mailto:quanttraderkim@gmail.com" class="hover:text-white">quanttraderkim@gmail.com</a> | 
+                    <a href="https://quanttraderkim.netlify.app/" target="_blank" class="hover:text-white font-semibold">Portfolio</a>
+                </p>
             </div>
             <div class="flex space-x-4 mt-6 md:mt-0 text-gray-400">
-                <a href="mailto:quanttraderkim@gmail.com" class="hover:text-white transition-colors duration-300" title="Email" aria-label="이메일 보내기">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                </a>
-                <a href="https://quanttraderkim.netlify.app/" target="_blank" class="hover:text-white transition-colors duration-300" title="Portfolio" aria-label="포트폴리오 사이트">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72"></path></svg>
-                </a>
                 <a href="https://github.com/quanttraderkim" target="_blank" class="hover:text-white transition-colors duration-300" title="GitHub" aria-label="GitHub 프로필">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                 </a>
@@ -102,47 +88,56 @@
         </header>
 
         <!-- 핵심 역량 (Summary) -->
-        <section class="mb-16 fade-in">
-            <h3 class="text-2xl font-bold text-white mb-4 border-b-2 border-sky-500 pb-2">About Me</h3>
+        <section class="mb-16">
+            <h3 class="text-2xl font-bold text-white mb-4 border-b-2 border-sky-500 pb-2">Summary</h3>
             <p class="text-lg text-gray-300 leading-relaxed">
-                AI 서비스의 성공적인 사업화 및 광고 프로덕트 최적화를 통해 비즈니스 성장을 주도하는 기획자입니다. 데이터 기반의 명확한 논리로 신규 BM을 설계하고, 유관부서와의 긴밀한 협업을 통해 목표를 초과 달성한 경험이 있습니다. 사용자 경험과 비즈니스 목표 사이의 균형을 맞추며 지속 가능한 성장을 만들어내는 데 강점이 있습니다.
+                모바일 서비스의 사업 기획 전문가로서, AI 전화 서비스 '에이닷 전화'의 광고 사업화를 주도하여 지속 가능한 매출 성장 모델을 구축했습니다. 데이터 기반의 명확한 논리로 비즈니스 모델을 설계하고, 국내외 광고 플랫폼 등 다양한 파트너사와의 제휴를 성공적으로 이끌었습니다. 개발/UX/운영 등 유관부서와의 긴밀한 협업을 통해 사용자 경험과 비즈니스 목표의 균형을 맞추며 목표를 초과 달성한 경험을 바탕으로, 카카오뱅크와 파트너사의 동반 성장을 이끌어내는 데 기여하겠습니다.
             </p>
         </section>
 
         <!-- 업무 경력 -->
-        <section class="mb-16 fade-in">
+        <section class="mb-16">
             <h3 class="text-2xl font-bold text-white mb-6 border-b-2 border-sky-500 pb-2">Work Experience</h3>
             <div class="space-y-4">
                 <div class="flex justify-between items-baseline mb-2">
                     <h4 class="text-xl font-bold text-sky-400">SK텔레콤</h4>
                     <p class="text-sm text-gray-400">2019.01 ~ 현재</p>
                 </div>
-                <p class="text-lg font-medium text-gray-200 mb-4">기획자 (MNO사업부 → 에이닷 사업부)</p>
+                <p class="text-lg font-medium text-gray-200 mb-4">서비스 기획자 (에이닷 사업부)</p>
 
                 <!-- 경력 카드 1: 광고 -->
                 <div class="glass-card rounded-lg">
                     <div class="project-toggle p-6">
                         <div class="flex justify-between items-center">
-                            <h5 class="text-lg font-bold text-white">1. 광고 프로덕트의 지속 성장 주도 및 매출 최적화 (2023 ~ 2025)</h5>
+                            <h5 class="text-lg font-bold text-white">1. 에이닷 전화 광고 사업 총괄 기획 및 매출 성장 견인</h5>
                             <svg class="details-icon w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
                         </div>
                     </div>
-                    <div class="details-container hidden border-t border-gray-700 p-6 space-y-4">
-                        <p class="text-md text-gray-300 leading-relaxed"><strong class="font-semibold text-gray-100 block mb-1">성장 기반 마련 (2023):</strong> 단일 광고 플랫폼 의존도 완화 및 신규 매출원 확보를 목표로, 주요 서비스 내 신규 광고 지면을 발굴하고 Multi-SDK 전략을 기획하여 <span class="highlight">월 1.5억 이상의 안정적인 추가 매출원을 확보</span>했습니다.</p>
-                        <ul class="list-disc list-inside text-gray-400 pl-4 text-sm space-y-1">
-                            <li>연락처 상세 등 PV와 CTR이 높을 것으로 예상되는 신규 지면 발굴</li>
-                            <li>Multi-SDK(ASUM, 카카오, 구글 등) 및 워터폴 전략을 기획하여 매출 안정성 및 확장성 확보</li>
-                        </ul>
-                        <p class="text-md text-gray-300 leading-relaxed"><strong class="font-semibold text-gray-100 block mb-1">매출 효율 극대화 (2024):</strong> 기존 지면의 광고 효율을 극대화하기 위해 미디에이션 및 워터폴 전략을 도입하고 시스템을 고도화했습니다. 이를 통해 <span class="highlight">연 36억 규모의 추가 매출 기반을 마련</span>하고, 특정 지면의 매출을 <span class="highlight">145% 증대</span>시키는 성과를 거두었습니다.</p>
-                         <ul class="list-disc list-inside text-gray-400 pl-4 text-sm space-y-1">
-                            <li>ASUM 직광고 미응답 시 Google Admob에 요청하는 워터폴 연동으로 유실 트래픽 최소화</li>
-                            <li>Google Admob과 협업하여 입찰 및 미디에이션 기능을 선제적으로 도입/테스트하여 효율 증대</li>
-                        </ul>
-                        <p class="text-md text-gray-300 leading-relaxed"><strong class="font-semibold text-gray-100 block mb-1">목표 초과 달성 및 안정화 (2025):</strong> 지속적인 A/B 테스트와 SDK 워터폴 운영 등 데이터 기반의 최적화를 통해, 사용자 불만(VOC)을 일 평균 1건 이하로 관리하면서 <span class="highlight">연간 광고 매출 목표(31.9억)를 122.8% 초과 달성(39.2억)</span>하는 성과를 견인했습니다.</p>
-                        <ul class="list-disc list-inside text-gray-400 pl-4 text-sm space-y-1">
-                            <li>A/B 테스트를 통해 광고 소재 에셋을 변경하여 유지율 하락 없이 구글 매출 15% 증대</li>
-                            <li>SDK 간 워터폴 최적화 운영으로 네트워크 광고 합계 매출 약 20% 증대</li>
-                        </ul>
+                    <div class="details-container border-t border-gray-700 px-6 space-y-6">
+                        <div>
+                            <p class="font-semibold text-gray-100 block mb-2">초기 사업 모델 구축</p>
+                            <p class="text-sm text-gray-300">SKT 광고 플랫폼(ASUM)을 연동하여 초기 광고주를 확보하고, 캐싱 및 배너 사이즈 최적화로 광고 효율을 개선하여 <span class="highlight">21년 대비 22년 광고 매출 187% 성장</span>을 달성했습니다.</p>
+                        </div>
+                         <div>
+                            <p class="font-semibold text-gray-100 block mb-2">매출원 다각화</p>
+                            <p class="text-sm text-gray-300">국내외 주요 애드 네트워크와의 파트너십을 주도하고 SDK 연동하여, 단일 플랫폼(ASUM) 리스크를 해소하고 <span class="highlight">연 00억 규모의 추가 매출 기반을 확보</span>했습니다.</p>
+                             <ul class="list-disc list-inside text-gray-400 pl-4 mt-2 text-xs space-y-1">
+                                <li>PV와 CTR이 높을 것으로 예상되는 연락처 상세 등 신규 지면 발굴</li>
+                                <li>Multi-SDK(ASUM, 카카오, 구글 등) 및 워터폴 전략을 기획하여 매출 안정성 및 확장성 확보</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-100 block mb-2">수익성 극대화</p>
+                             <p class="text-sm text-gray-300">3개 광고 SDK를 활용한 워터폴 전략 기획 및 데이터 기반 최적화로 <span class="highlight">전체 광고 매출 50% 추가 증대</span>, 사용자 시나리오 최적화로 <span class="highlight">VOC 증대 없이 지면 매출 108% 증대</span>, A/B 테스트를 통한 광고 에셋 최적화로 <span class="highlight">유지율 변동 없이 매출 15% 증대</span>를 이끌었습니다.</p>
+                             <ul class="list-disc list-inside text-gray-400 pl-4 mt-2 text-xs space-y-1">
+                                <li>ASUM 직광고 미응답 시 Google Admob에 요청하는 워터폴 연동으로 유실 트래픽 최소화</li>
+                                <li>Google Admob과 협업하여 입찰 및 미디에이션 기능을 선제적으로 도입/테스트하여 효율 증대</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <p class="font-semibold text-gray-100 block mb-2">성과</p>
+                            <p class="text-sm text-gray-300">위 활동들을 통해 사용자 VOC(불만)를 일 평균 1건 이하로 유지하며, <span class="highlight">연간 광고 매출 목표 122.8% 초과 달성</span>했습니다.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -150,22 +145,27 @@
                 <div class="glass-card rounded-lg">
                     <div class="project-toggle p-6">
                          <div class="flex justify-between items-center">
-                            <h5 class="text-lg font-bold text-white">2. AI 서비스 신규 기획 및 사업화 (A.전화)</h5>
+                            <h5 class="text-lg font-bold text-white">2. 에이닷 전화 AI 서비스 신규 기획 및 사업화 기반 마련</h5>
                             <svg class="details-icon w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
                         </div>
                     </div>
-                    <div class="details-container hidden border-t border-gray-700 p-6 space-y-4">
-                        <p class="text-md text-gray-300 leading-relaxed"><strong class="font-semibold text-gray-100 block mb-1">유/무료 상품 스킴 및 BM 기획 (2023):</strong> AI 통화녹음/요약 서비스의 유/무료 상품 스킴 및 광고 모델을 총괄 기획하여 <span class="highlight">연 매출 110억 규모의 신규 사업 기반을 마련</span>했습니다.</p>
-                         <ul class="list-disc list-inside text-gray-400 pl-4 text-sm space-y-1">
-                            <li>Lite/Smart/Pro 3단계 플랜 설계를 통해 고객 니즈 세분화 및 지불의사에 따른 타겟팅</li>
-                             <li>통화종료화면 등 핵심 지면에 광고 모델을 설계하여 무료 이용자 대상 수익화 기반 마련</li>
-                        </ul>
-                        <p class="text-md text-gray-300 leading-relaxed"><strong class="font-semibold text-gray-100 block mb-1">AI 제안 기능 고도화 (2024):</strong> 비용 효율적인 AI 제안 기능 구조(LLM→NLU)를 내재화하고 캘린더 연동 등 고도화를 통해, <span class="highlight">일 평균 기능 클릭 수를 24배, 일정 등록 전환율을 78%p(1%→79%) 증대</span>시켰습니다.</p>
-                        <ul class="list-disc list-inside text-gray-400 pl-4 text-sm space-y-1">
-                            <li>LLM으로 할 일을 추출하고 NLU로 분류하는 구조로 변경하여, 기능 확장 시 비용 증가를 최소화</li>
-                            <li>A. 캘린더 자동 연동 기능으로 통화요약 사용자의 캘린더 이용률을 폭발적으로 증대</li>
-                        </ul>
-                        <p class="text-md text-gray-300 leading-relaxed"><strong class="font-semibold text-gray-100 block mb-1">사용자 확대 및 마케팅 성과 창출 (2024):</strong> 통화요약 플랜 도입으로 서비스 가능 사용자 규모를 <span class="highlight">370% 확대</span>하고, 연계 혜택으로 <span class="highlight">50만 명의 앱 방문을 유도</span>하는 마케팅 성과를 창출했습니다.</p>
+                    <div class="details-container border-t border-gray-700 px-6 space-y-6">
+                        <div>
+                            <p class="font-semibold text-gray-100 block mb-2">'AI 통화요약' 무료 모델 기획</p>
+                            <p class="text-sm text-gray-300">제한된 비용 내에서 대규모 트래픽을 수용할 수 있는 무료 플랜을 도입하여, <span class="highlight">추가 비용 없이 서비스 가능 사용자 규모를 370% 확대</span>하고, 혜택 연동을 통해 <span class="highlight">에이닷 앱 신규 방문 00만 명을 유도</span>했습니다.</p>
+                             <ul class="list-disc list-inside text-gray-400 pl-4 mt-2 text-xs space-y-1">
+                                <li>Lite/Smart/Pro 3단계 유무료 플랜 설계를 통해 고객 니즈 세분화 및 지불의사에 따른 타겟팅</li>
+                                <li>통화요약 횟수 제한 및 혜택 지급 구조를 설계하여 비용 통제 및 마케팅 효과 창출</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-100 block mb-2">AI 기능 고도화를 통한 인게이지먼트 증대</p>
+                            <p class="text-sm text-gray-300">통화요약 후속 액션 기능의 비용 구조를 효율화하고 캘린더 연동 등 편의성을 강화하여, <span class="highlight">일 평균 기능 클릭 수를 24배, 일정 등록 전환율을 78%p 증대</span>시켰습니다.</p>
+                            <ul class="list-disc list-inside text-gray-400 pl-4 mt-2 text-xs space-y-1">
+                                <li>LLM으로 할 일을 추출하고 NLU로 분류하는 구조로 변경하여, 기능 확장 시 비용 증가를 최소화</li>
+                                <li>A. 캘린더 자동 연동 기능으로 통화요약 사용자의 캘린더 이용률을 폭발적으로 증대</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 
@@ -173,24 +173,30 @@
                 <div class="glass-card rounded-lg">
                     <div class="project-toggle p-6">
                         <div class="flex justify-between items-center">
-                            <h5 class="text-lg font-bold text-white">3. 서비스/기능 기획 및 사용자 성장</h5>
+                            <h5 class="text-lg font-bold text-white">3. 에이닷 전화 기타 서비스 기획</h5>
                             <svg class="details-icon w-6 h-6 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
                         </div>
                     </div>
-                    <div class="details-container hidden border-t border-gray-700 p-6 space-y-4">
-                        <p class="text-md text-gray-300 leading-relaxed"><strong class="font-semibold text-gray-100 block mb-1">'T전화 테마' 서비스 개선 (2023):</strong> 핵심 UX(이어하기, 추천) 개선을 통해 <span class="highlight">테마 설정자 수를 133만에서 150만으로 순증</span>시키며 사업화 기반을 강화했습니다.</p>
-                         <ul class="list-disc list-inside text-gray-400 pl-4 text-sm space-y-1">
-                            <li>기기 변경 시 테마 설정이 초기화되는 문제점을 '이어하기' 기능으로 해결, 이탈률 방지</li>
-                             <li>추천 테마 Push, 진입점 UI 개선 등으로 신규 사용자 유입 증대</li>
-                        </ul>
-                        <p class="text-md text-gray-300 leading-relaxed"><strong class="font-semibold text-gray-100 block mb-1">신규 B2B 상품 '비즈니스 링크' 기획 (2023):</strong> 신규 B2B 상품 '비즈니스 링크'를 기획하고 적시 출시하여 <span class="highlight">5개 이상의 초기 고객사를 확보</span>하며 사업 포트폴리오를 확장했습니다.</p>
+                    <div class="details-container border-t border-gray-700 px-6 space-y-6">
+                        <div>
+                            <p class="font-semibold text-gray-100 block mb-2">'에이닷 전화 테마' 서비스 UX 개선</p>
+                            <p class="text-sm text-gray-300">핵심 UX(이어하기, 추천) 개선을 통해 <span class="highlight">테마 설정자 수를 13% 증대</span>시키며 사업화 기반을 강화했습니다.</p>
+                            <ul class="list-disc list-inside text-gray-400 pl-4 mt-2 text-xs space-y-1">
+                                <li>기기 변경 시 테마 설정이 초기화되는 문제점을 '이어하기' 기능으로 해결, 이탈률 방지</li>
+                                <li>추천 테마 Push, 진입점 UI 개선 등으로 신규 사용자 유입 증대</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <p class="font-semibold text-gray-100 block mb-2">신규 B2B 광고 상품 '비즈니스 링크' 기획/출시</p>
+                            <p class="text-sm text-gray-300">번호 입력 시 키패드 상단에 노출되는 신규 상품을 기획하여 <span class="highlight">초기 제휴 고객사 5개 이상을 확보</span>하고 사업 포트폴리오를 확장했습니다.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- 초기 경력 및 인턴십 -->
-        <section class="mb-16 fade-in">
+        <section class="mb-16">
             <h3 class="text-2xl font-bold text-white mb-6 border-b-2 border-sky-500 pb-2">Early Career & Internships</h3>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="glass-card p-6 rounded-lg">
@@ -207,7 +213,7 @@
         </section>
 
         <!-- 학력 및 기타 -->
-        <section class="grid md:grid-cols-2 gap-x-12 gap-y-8 fade-in">
+        <section class="grid md:grid-cols-2 gap-x-12 gap-y-8">
             <div>
                 <h3 class="text-xl font-bold text-white mb-4">Education</h3>
                 <h4 class="font-semibold text-gray-200">연세대학교</h4>
@@ -216,14 +222,14 @@
             </div>
             <div>
                 <h3 class="text-xl font-bold text-white mb-4">Skills & Etc.</h3>
-                <p><strong class="font-semibold text-gray-200 w-24 inline-block">언어:</strong> 한국어(원어민), 영어(비즈니스)</p>
-                 <p><strong class="font-semibold text-gray-200 w-24 inline-block">AI 활용:</strong> 바이브 코딩 프로젝트 다수</p>
-                <p><strong class="font-semibold text-gray-200 w-24 inline-block">병역:</strong> KATUSA 복무</p>
+                <p><strong class="font-semibold text-gray-200 w-28 inline-block">언어:</strong> 한국어(원어민), 영어(비즈니스)</p>
+                 <p><strong class="font-semibold text-gray-200 w-28 inline-block">AI 활용 능력:</strong> 바이브 코딩 프로젝트 다수</p>
+                <p><strong class="font-semibold text-gray-200 w-28 inline-block">병역:</strong> KATUSA 복무</p>
             </div>
         </section>
 
         <!-- 푸터 -->
-        <footer class="text-center text-gray-500 mt-20 fade-in">
+        <footer class="text-center text-gray-500 mt-20">
             <p>&copy; 2025 Daehwan Kim. All Rights Reserved.</p>
         </footer>
     </div>
@@ -236,34 +242,11 @@
                     const details = toggle.nextElementSibling;
                     const icon = toggle.querySelector('.details-icon');
                     
-                    details.classList.toggle('hidden');
+                    details.classList.toggle('open');
                     if (icon) {
-                        icon.style.transform = details.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                        icon.style.transform = details.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
                     }
                 });
-            });
-
-            // 스크롤 애니메이션
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // 모든 섹션에 애니메이션 적용
-            document.querySelectorAll('section').forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(20px)';
-                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(section);
             });
         });
     </script>
